@@ -83,7 +83,7 @@ class TeacherController extends Controller
     public function join($id)
     {
         $user = User::getSingle($id);
-        $user ->is_atend =1;
+        $user -> is_atend =1;
         $user->save();
 
         return redirect('teacher/class/list')->with('success', "Student successfully atend class");

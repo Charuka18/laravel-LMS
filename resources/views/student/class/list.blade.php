@@ -49,7 +49,7 @@
                         <td>{{ $value->created_by_name }}</td>
                         <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                         <td>
-                        <a href="{{url('teacher/class/join/'.$value->id)}}" class="btn btn-warning">Join</a>
+                        <a href="{{url('student/class/join/'.$value->id)}}" class="btn btn-warning">Join</a>
                       </td>
                         
                       </tr>

@@ -59,10 +59,16 @@ class ClassController extends Controller
 
         return redirect('admin/class/list')->with('success', "Class successfully Deleted");
     }
+    public function atend()
+    {
+        $data['getRecordS'] = User::getStudent();
+        $data['header_title'] = "Student List";
+        return view('admin.atend.list',$data);
+    }
     public function join($id)
     {
         $save = ClassModel::getSingle($id);
-        $save -> is_atend =1;
+        $save -> is_join =1;
         $save->save();
 
         return redirect('admin/class/list')->with('success', "Successfully joined");

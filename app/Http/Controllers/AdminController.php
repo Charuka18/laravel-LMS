@@ -177,5 +177,13 @@ class AdminController extends Controller
 
         return redirect('admin/student/list')->with('success', "Student successfully Deleted");
     }
+    public function join($id)
+    {
+        $user = User::getSingle($id);
+        $user ->is_atend =1;
+        $user->save();
+
+        return redirect('teacher/class/list')->with('success', "Student successfully atend class");
+    }
 
 }
