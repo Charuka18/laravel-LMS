@@ -32,6 +32,7 @@
                       <th>Status</th>
                       <th>Created by</th>
                       <th>Create Date</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                     @foreach($getRecord as $value)
@@ -47,6 +48,9 @@
                         </td>
                         <td>{{ $value->created_by_name }}</td>
                         <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                        <td>
+                        <a href="{{url('teacher/class/join/'.$value->id)}}" class="btn btn-warning">Join</a>
+                      </td>
                         
                       </tr>
                     @endforeach
