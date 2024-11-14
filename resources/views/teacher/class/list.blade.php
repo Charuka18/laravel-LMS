@@ -55,6 +55,8 @@
                         @if($value->created_by_name == Auth::user()->name)
                         <a href="{{url('teacher/class/edit/'.$value->id)}}" class="btn btn-primary">Edit</a>
                         <a href="{{url('teacher/class/delete/'.$value->id)}}" class="btn btn-danger">Delete</a>
+                        <a href="{{asset('teacher/atend/list')}}" class="btn btn-info">attendance</a>
+                        <a href="{{url('teacher/class/join/'.$value->id)}}" class="btn btn-warning">Join</a>
                           @endif
                         </td>
                       </tr>

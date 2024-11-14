@@ -26,6 +26,12 @@ class AdminController extends Controller
         $data['header_title'] = "Student List";
         return view('admin.student.list',$data);
     }
+    public function atend()
+    {
+        $data['getRecordS'] = User::getStudentatend();
+        $data['header_title'] = "Student List";
+        return view('admin.atend.list',$data);
+    }
     public function addA()
     {
         $data['header_title'] = "Add new Admin";

@@ -79,5 +79,21 @@ class TeacherController extends Controller
 
         return redirect('teacher/class/list')->with('success', "Class successfully Deleted");
     }
+    
+    public function join($id)
+    {
+        $user = User::getSingle($id);
+        $user ->is_atend =1;
+        $user->save();
+
+        return redirect('teacher/class/list')->with('success', "Student successfully atend class");
+    }
+    
+    public function atend()
+    {
+        $data['getRecordS'] = User::getStudentatend();
+        $data['header_title'] = "Student List";
+        return view('teacher.atend.list',$data);
+    }
 
 }

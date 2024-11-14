@@ -24,7 +24,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>Registrations</h3>
+                <h3>Class</h3>
 
                 <p>Class Registrations</p>
               </div>

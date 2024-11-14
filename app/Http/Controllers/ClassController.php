@@ -59,4 +59,12 @@ class ClassController extends Controller
 
         return redirect('admin/class/list')->with('success', "Class successfully Deleted");
     }
+    public function join($id)
+    {
+        $save = ClassModel::getSingle($id);
+        $save -> is_atend =1;
+        $save->save();
+
+        return redirect('admin/class/list')->with('success', "Successfully joined");
+    }
 }

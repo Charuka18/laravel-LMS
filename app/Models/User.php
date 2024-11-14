@@ -70,6 +70,14 @@ class User extends Authenticatable
                             ->orderBy('id','desc')
                             ->get();
     }
+    static public function getStudentatend()
+    {
+        return self::select('users.*')
+                            ->where('user_type','=',3)
+                            ->where('is_atend','=',1)
+                            ->orderBy('id','desc')
+                            ->get();
+    }
 
     static public function getEmailSingle($email)
     {

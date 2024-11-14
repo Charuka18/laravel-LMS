@@ -24,6 +24,7 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/admin/list', [AdminController::class, 'listA']);
     Route::get('admin/teacher/list', [AdminController::class, 'listT']);
     Route::get('admin/student/list', [AdminController::class, 'listS']);
+    Route::get('admin/atend/list', [AdminController::class, 'atend']);
     Route::get('admin/admin/add', [AdminController::class, 'addA']);
     Route::get('admin/teacher/add', [AdminController::class, 'addT']);
     Route::get('admin/student/add', [AdminController::class, 'addS']);
@@ -39,7 +40,6 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/admin/delete/{id}', [AdminController::class, 'deleteA']);
     Route::get('admin/teacher/delete/{id}', [AdminController::class, 'deleteT']);
     Route::get('admin/student/delete/{id}', [AdminController::class, 'deleteS']);
-
     //class url
     Route::get('admin/class/list', [ClassController::class, 'list']);
     Route::get('admin/class/add', [ClassController::class, 'add']);
@@ -63,6 +63,9 @@ Route::group(['middleware'=> 'teacher'], function(){
     Route::get('teacher/admin/list', [TeacherController::class, 'listA']);
     Route::get('teacher/teacher/list', [TeacherController::class, 'listT']);
     Route::get('teacher/student/list', [TeacherController::class, 'listS']);
+    
+    Route::get('teacher/class/join/{id}', [TeacherController::class, 'join']);
+    Route::get('teacher/atend/list', [AdminController::class, 'atend']);
 
     //class url
     Route::get('teacher/class/list', [TeacherController::class, 'list']);
